@@ -345,6 +345,9 @@ public final class NetworkingModule extends NativeNetworkingAndroidSpec {
     if (timeout != mClient.connectTimeoutMillis()) {
       clientBuilder.connectTimeout(timeout, TimeUnit.MILLISECONDS);
     }
+    
+    clientBuilder.readTimeout(timeout, TimeUnit.MILLISECONDS);
+
     OkHttpClient client = clientBuilder.build();
 
     Headers requestHeaders = extractHeaders(headers, data);
